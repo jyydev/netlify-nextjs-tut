@@ -23,7 +23,7 @@ export default function NewMeetupPage() {
         <title>Add a New Meetup</title>
         <meta title="description" content="Add your own meetup!" />
       </Head>
-      <NewMeetupForm onAddMeetup={addMeetupHandler} />;
+      <NewMeetupForm onAddMeetup={addMeetupHandler} />
     </>
   );
 }

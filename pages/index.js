@@ -42,7 +42,7 @@ export default function HomePage(props) {
         <title>Nextjs Meetups</title>
         <meta name="description" content="Browse a huge list of highly active React meetups!"/>
       </Head>
-      <MeetupList meetups={props.meetups} />;
+      <MeetupList meetups={props.meetups} />
     </>
   );
 }

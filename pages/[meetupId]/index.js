@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from 'next/head';
 import { MongoClient, ObjectId } from 'mongodb';
 import MeetupDetail from '../../components/meetups/MeetupDetail';
 
@@ -46,9 +46,9 @@ export default function MeetupDetails(props) {
     <>
       <Head>
         <title>{props.meetupData.title}</title>
-        <meta title="description" content={props.meetupData.description} />
+        <meta title='description' content={props.meetupData.description} />
       </Head>
-      <MeetupDetail {...props.meetupData} />;
+      <MeetupDetail {...props.meetupData} />
     </>
   );
 }
