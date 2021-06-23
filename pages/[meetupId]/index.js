@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { MongoClient, ObjectId } from 'mongodb';
 import MeetupDetail from '../../components/meetups/MeetupDetail';
+import { useRouter } from 'next/router';
 
 export async function getStaticPaths() {
   const client = await MongoClient.connect(
@@ -42,13 +43,28 @@ export async function getStaticProps(context) {
 }
 
 export default function MeetupDetails(props) {
+
+  const router = useRouter();
+  async function delMeetupHandler(id) {
+    const response = await fetch('/api/del-meetup', {
+      method: 'POST',
+      body: JSON.stringify(id),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    const data = await response.json();
+    router.push('/');
+  }
+
   return (
     <>
       <Head>
         <title>{props.meetupData.title}</title>
         <meta title='description' content={props.meetupData.description} />
       </Head>
-      <MeetupDetail {...props.meetupData} />
+      <MeetupDetail {...props.meetupData} onDelMeetup={delMeetupHandler} />
     </>
   );
 }
