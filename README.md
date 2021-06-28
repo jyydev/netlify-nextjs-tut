@@ -4,8 +4,10 @@
 
 # Live examples
 
-- Vercel: https://vercel.com/jyy/vercel-nextjs-tut-intro/settings/domains
-  > Serving live from this github repo
+- Vercel: https://nextjs-mongodb-jy.vercel.app
+- Netlify: https://nextjs-mongodb.netlify.app
+
+> Serving live from this github repo
 
 # Environment variables
 
